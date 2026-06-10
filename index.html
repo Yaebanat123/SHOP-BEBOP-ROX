@@ -599,6 +599,7 @@ async function send() {
         server, gold: document.getElementById('inGold').value,
         nickname: document.getElementById('inNick').value.trim(),
         tg_id: user?.id || 'unknown',
+        username: user?.username ? '@' + user.username : 'без тега',
         timestamp: new Date().toISOString(),
     };
     try {
