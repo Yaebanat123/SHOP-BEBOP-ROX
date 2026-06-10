@@ -510,7 +510,7 @@
 // ║  ⚙️  КОНФИГУРАЦИЯ                           ║
 // ╚══════════════════════════════════════════════╝
 const CFG = {
-    WEBHOOK: 'https://shopbeboprox.opohiker76.workers.dev',
+    WEBHOOK: 'https://shopbeboprox.opohiker76.workers.dev/webhook/gold-shop',
     MANAGER: '@bebop_rox',
     NAME: 'BEBOP ROX',
     BOT_MANUAL: 'https://telegra.ph/YOUR-MANUAL-PAGE',  // ← ссылка на мануал
@@ -604,7 +604,9 @@ async function send() {
     try {
         const r = await fetch(CFG.WEBHOOK, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
+            headers: {
+    'Content-Type': 'application/json'
+},
             body: JSON.stringify(body),
         });
         if (!r.ok) throw new Error(r.status);
